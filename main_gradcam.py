@@ -9,15 +9,16 @@ import cv2
 
 # names = ['trashcan', 'slippers', 'wire', 'socks', 'carpet', 'book', 'feces', 'curtain', 'stool', 'bed',
 #          'sofa', 'close stool', 'table', 'cabinet']
-names = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
-         'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
-         'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
-         'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
-         'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
-         'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
-         'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
-         'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
-         'hair drier', 'toothbrush']  # class names
+# names = ['person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train', 'truck', 'boat', 'traffic light',
+#         'fire hydrant', 'stop sign', 'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
+#         'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag', 'tie', 'suitcase', 'frisbee',
+#         'skis', 'snowboard', 'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
+#         'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon', 'bowl', 'banana', 'apple',
+#         'sandwich', 'orange', 'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch',
+#         'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote', 'keyboard', 'cell phone',
+#         'microwave', 'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
+#         'hair drier', 'toothbrush']  # class names
+names = ['TR', 'MR', 'AR', 'PR']
 target_layers = ['102_act', '103_act', '104_act']  # yolov7
 # target_layers = ['74_act', '75_act', '76_act']  # yolov7-tiny
 
@@ -27,7 +28,7 @@ parser.add_argument('--model-path', type=str, default="weights/yolov7.pt", help=
 parser.add_argument('--img-path', type=str, default='figure/cam', help='input image path')
 parser.add_argument('--output-dir', type=str, default='outputs/', help='output dir')
 parser.add_argument('--img-size', type=int, default=640, help="input image size")
-parser.add_argument('--target-layer', type=str, default='76_act',
+parser.add_argument('--target-layer', type=str, default='104_act', #76_act
                     help='The layer hierarchical address to which gradcam will applied,'
                          ' the names should be separated by underline')
 parser.add_argument('--method', type=str, default='gradcam', help='gradcam method: gradcam, gradcampp')
